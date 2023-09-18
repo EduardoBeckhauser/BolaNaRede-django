@@ -1,5 +1,6 @@
 from django.db import models
 
+from uploader.models import Image
 
 class Usuario(models.Model):
     nome = models.CharField(max_length=100)
@@ -28,7 +29,15 @@ class Camisa(models.Model):
     time = models.ForeignKey(
         Time, on_delete=models.PROTECT, related_name="camisa"
     )
-    
+    capa = models.ForeignKey(
+        Image,
+        related_name="+",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        default=None,
+    )
+
 
     def __str__(self):
         return f"{self.descricao} ({self.quantidade})"

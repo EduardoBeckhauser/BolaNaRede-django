@@ -8,8 +8,12 @@ authors = [
 dependencies = [
     "django>=4.2.5",
     "djangorestframework>=3.14.0",
+    "django-cors-headers>=4.2.0",
+    "python-magic>=0.4.27",
+    "Pillow>=10.0.1",
 ]
 requires-python = ">=3.10"
 readme = "README.md"
 license = {text = "MIT"}
 
+[tool.pdm]
